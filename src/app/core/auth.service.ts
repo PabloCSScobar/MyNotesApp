@@ -11,4 +11,7 @@ export class AuthService {
   login(loginData) {
     this.http.post(`${environment.apiUrl}/auth/`, loginData).subscribe( token => console.log(token));
   }
+  register(registerData) {
+    this.http.post(`${environment.apiUrl}/api/users/`, registerData).subscribe( user => console.log(user));
+  }
 }
