@@ -5,8 +5,9 @@ import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { ReactiveFormsModule } from '@angular/forms'
+import { AuthComponent } from './auth/auth.component';
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent],
+  declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent, AuthComponent],
   imports: [
     ReactiveFormsModule,
     HomeRoutingModule,
