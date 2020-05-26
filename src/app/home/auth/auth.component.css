@@ -1,0 +1,30 @@
+.full-width-image {
+    min-height: 100vh;
+    width: 100vw;
+  }
+  
+  .auth-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #424242;
+  }
+  
+  .auth-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+  }
+  
+  .card {
+    background-color: rgba(42, 42, 42, 0.8);
+    color: #FFF;
+    -webkit-box-shadow: 0px 0px 31px 8px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0px 0px 31px 8px rgba(0,0,0,0.9);
+    box-shadow: 0px 0px 31px 8px rgba(0,0,0,0.9);
+  }
