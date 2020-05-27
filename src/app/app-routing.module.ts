@@ -18,9 +18,9 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: AuthComponent,
+    component: MainComponent,
     loadChildren: () =>
-          import('./home/home.module').then(m => m.HomeModule)
+          import('./editor/editor.module').then(m => m.EditorModule)
   },
 ];
 
