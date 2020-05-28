@@ -8,14 +8,14 @@ import { AuthService } from 'src/app/core/auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
-    username: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
+    username: new FormControl('pawel', Validators.required),
+    password: new FormControl('pawel', Validators.required)
   });
   constructor(private authService: AuthService) { }
 
   login() {
     if(this.loginForm.status === "VALID") {
-    this.authService.login(this.loginForm.value);
+    this.authService.login(this.loginForm.value).subscribe( user => console.log(user), err => console.log(err));
     }
   }
 
