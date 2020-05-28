@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AuthComponent } from './home/auth/auth.component';
 import { MainComponent } from './editor/main/main.component';
+import { NotesResolver } from './editor/note-resolver.service';
 
 const routes: Routes = [
   {
@@ -12,6 +13,9 @@ const routes: Routes = [
   },
   {
     path: 'notes',
+    resolve: {
+      notes: NotesResolver
+    },
     component: MainComponent,
     loadChildren: () =>
           import('./editor/editor.module').then(m => m.EditorModule)
@@ -25,6 +29,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [NotesResolver]
 })
 export class AppRoutingModule { }
