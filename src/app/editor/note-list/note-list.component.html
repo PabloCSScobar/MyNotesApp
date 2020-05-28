@@ -1,0 +1,3 @@
+<li *ngFor="let item of notes" class="sidebar-item">
+    <a [routerLink]="'edit/'+item.id">{{item.title}}</a>
+  </li>
