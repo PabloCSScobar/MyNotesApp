@@ -18,9 +18,8 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: MainComponent,
-    loadChildren: () =>
-          import('./editor/editor.module').then(m => m.EditorModule)
+    redirectTo: 'notes',
+    pathMatch: 'full'
   },
 ];
 
