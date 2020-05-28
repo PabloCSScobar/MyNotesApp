@@ -384,11 +384,11 @@
     margin: 0 1rem 1rem;
   }
   
-  .sidebar .sidebar-heading {
+  .sidebar .sidebar-item {
     text-align: center;
     padding: 0 1rem;
-    font-weight: 800;
-    font-size: 0.65rem;
+    font-weight: 500;
+    font-size: .85rem;
   }
   
   @media (min-width: 768px) {
@@ -449,7 +449,7 @@
     .sidebar .sidebar-brand .sidebar-brand-text {
       display: inline;
     }
-    .sidebar .sidebar-heading {
+    .sidebar .sidebar-item {
       text-align: left;
     }
     .sidebar.toggled {
@@ -504,7 +504,7 @@
     .sidebar.toggled .sidebar-brand .sidebar-brand-text {
       display: none;
     }
-    .sidebar.toggled .sidebar-heading {
+    .sidebar.toggled .sidebar-item {
       text-align: center;
     }
   }
@@ -517,7 +517,7 @@
     border-top: 1px solid #eaecf4;
   }
   
-  .sidebar-light .sidebar-heading {
+  .sidebar-light .sidebar-item {
     color: #b7b9cc;
   }
   
@@ -569,7 +569,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.15);
   }
   
-  .sidebar-dark .sidebar-heading {
+  .sidebar-dark .sidebar-item {
     color: rgba(255, 255, 255, 0.4);
   }
   
