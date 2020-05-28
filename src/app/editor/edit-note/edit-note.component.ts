@@ -9,28 +9,27 @@ import { NotesService } from '../notes.service';
   styleUrls: ['./edit-note.component.css']
 })
 export class EditNoteComponent implements OnInit {
-  NoteId;
   note = null;
-  editNoteForm = new FormGroup({
-    title: new FormControl('', Validators.required),
-    body: new FormControl('', Validators.required)
-  });
+  editNoteForm;
   constructor(private route: ActivatedRoute, private notesService: NotesService) {
    }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.NoteId = params.get("id");
-      this.notesService.notesSubject.subscribe( notes => {
-        this.note = notes.filter( x => x.id == this.NoteId);
-      });
+      this.getNote(params.get("id"));
+      this.editNoteForm = this.fillForm();
     })
-    
   }
   editNote() {
-    console.log(this.editNoteForm.value);
+    this.notesService.updateNote(this.note.id, this.editNoteForm.value);
   }
   getNote(id) {
-    
+    this.note = this.notesService.notesSubject.getValue().filter( x => x.id == id)[0];
+  }
+  fillForm() {
+    return new FormGroup({
+      title: new FormControl(this.note.title, Validators.required),
+      body: new FormControl(this.note.body, Validators.required)
+    });
   }
 }
