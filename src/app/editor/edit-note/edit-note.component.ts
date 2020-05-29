@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NotesService } from '../notes.service';
 
 @Component({
@@ -10,14 +10,19 @@ import { NotesService } from '../notes.service';
 })
 export class EditNoteComponent implements OnInit {
   note = null;
-  editNoteForm;
-  constructor(private route: ActivatedRoute, private notesService: NotesService) {
+  editNoteForm = new FormGroup({
+    title: new FormControl('', Validators.required),
+    body: new FormControl('', Validators.required)
+  });
+  constructor(private route: ActivatedRoute, private router: Router, private notesService: NotesService) {
    }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.getNote(params.get("id"));
-      this.editNoteForm = this.fillForm();
+      if(this.note) {
+        this.editNoteForm = this.fillForm();
+      }
     })
   }
   editNote() {
@@ -25,6 +30,14 @@ export class EditNoteComponent implements OnInit {
   }
   getNote(id) {
     this.note = this.notesService.notesSubject.getValue().filter( x => x.id == id)[0];
+    if(!this.note) {
+      this.router.navigate(['notes']);
+    }
+  }
+  deleteNote() {
+    this.notesService.deleteNote(this.note.id).subscribe( () =>
+      this.router.navigate(['notes'])
+    )
   }
   fillForm() {
     return new FormGroup({

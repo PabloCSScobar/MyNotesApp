@@ -10,9 +10,14 @@
       </label>
     </div>
     <div class="form-group">
-      <button class="btn btn-primary btn-block btn-raised" type="submit">
+      <button class="btn btn-primary btn-block btn-sm" type="submit">
         <span>Edit note</span>
       </button>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-outline-danger btn-block btn-sm" (click)="deleteNote()" type="button">
+            <span>Delete Note</span>
+        </button>
     </div>
 </form>
 
