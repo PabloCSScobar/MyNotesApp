@@ -1,33 +1,51 @@
-<form [formGroup]="registerForm" (ngSubmit)="register()">
-    <div class="form-group">
-      <label class="d-block">
-        <input type="text" class="form-control" [placeholder]="'Firstname'" formControlName="first_name">
-      </label>
-    </div>
-    <div class="form-group">
-      <label class="d-block">
-        <input type="text" class="form-control" [placeholder]="'Lastname'" formControlName="last_name">
-      </label>
-    </div>
-    <div class="form-group">
-      <label class="d-block">
-        <input type="text" class="form-control" [placeholder]="'Email'" formControlName="email">
-      </label>
-    </div>
-    <div class="form-group">
-      <label class="d-block">
-        <input type="text" class="form-control" [placeholder]="'Username'" formControlName="username">
-      </label>
-    </div>
-    <div class="form-group">
-      <label class="d-block">
-        <input type="text" class="form-control" [placeholder]="'Password'"  formControlName="password">
-      </label>
-    </div>
-    <div class="form-group">
-      <button class="btn btn-primary btn-block btn-raised" type="submit">
-        <span>Sign up</span>
-      </button>
-    </div>
-    <a [routerLink]="['/auth/login']">Got an account already? Log in here!</a>
-  </form>
+
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <app-error-message [control]="registerForm.controls['first_name']"></app-error-message>
+          <div class="form-group">
+            <label class="d-block">
+              <input type="text" class="form-control" [placeholder]="'Firstname'" formControlName="first_name">
+            </label>
+          </div>
+          <app-error-message [control]="registerForm.controls['last_name']"></app-error-message>
+          <div class="form-group">
+            <label class="d-block">
+              <input type="text" class="form-control" [placeholder]="'Lastname'" formControlName="last_name">
+            </label>
+          </div>
+          <app-error-message [control]="registerForm.controls['email']"></app-error-message>
+          <div class="form-group">
+            <label class="d-block">
+              <input type="text" class="form-control" [placeholder]="'Email *'" formControlName="email">
+            </label>
+          </div>
+          <app-error-message [control]="registerForm.controls['username']"></app-error-message>
+          <div class="form-group">
+            <label class="d-block">
+              <input type="text" class="form-control" [placeholder]="'Username *'" formControlName="username">
+            </label>
+          </div>
+          <app-error-message [control]="registerForm.controls['password']"></app-error-message>
+          <div class="form-group">
+            <label class="d-block">
+              <input type="text" class="form-control" [placeholder]="'Password *'"  formControlName="password">
+            </label>
+          </div>
+          <app-error-message [control]="registerForm"></app-error-message>
+          <app-error-message [control]="registerForm.controls['confirm_password']"></app-error-message>
+          <div class="form-group">
+              <label class="d-block">
+                <input type="text" class="form-control" [placeholder]="'Confirm password *'"  formControlName="confirm_password">
+              </label>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block btn-raised btn-login" type="submit">
+              <span>Sign up</span>
+            </button>
+          </div>
+          <a [routerLink]="['/auth/login']">Got an account already? Log in here!</a>
+        </form>
+  </div>
+</div>

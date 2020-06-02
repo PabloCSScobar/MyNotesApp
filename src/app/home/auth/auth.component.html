@@ -1,14 +1,27 @@
-<div class="container-fluid full-width-image">
-    <div class="auth-container">
-      <div class="auth-box">
-        <div class="container">
-          <div class="card col-md-6 mt-3 mx-auto">
-            <div class="card-body">
-              <h4 class="card-title text-center">Log In</h4>
-              <router-outlet></router-outlet>
+
+<div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+      <div class="col-md-8 col-lg-6">
+        <div class="login d-flex flex-column justify-content-between py-5">
+          <div class="logo container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto text-center">
+                <h1>My Notes</h1>
+              </div>
             </div>
           </div>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto">
+                <router-outlet></router-outlet>
+              </div>
+            </div>
+          </div>
+          <div></div>
         </div>
       </div>
     </div>
-  </div>
+</div>
+    
