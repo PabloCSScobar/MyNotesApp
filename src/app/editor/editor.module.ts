@@ -8,12 +8,13 @@ import { NewNoteComponent } from './new-note/new-note.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NoteListComponent } from './note-list/note-list.component';
 import { EditNoteComponent } from './edit-note/edit-note.component';
-
+import { QuillModule } from 'ngx-quill';
 
 
 @NgModule({
   declarations: [MainComponent, NavComponent, SidebarComponent, NewNoteComponent, NoteListComponent, EditNoteComponent],
   imports: [
+    QuillModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
