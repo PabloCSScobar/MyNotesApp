@@ -1,15 +1,14 @@
-<div id="wrapper">
-    <app-sidebar></app-sidebar>
+<div class="d-flex">
+    <aside class="d-none d-md-flex">
+      <app-sidebar></app-sidebar>
+    </aside>
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
       <!-- Main Content -->
-      <div id="content">
-            <app-nav></app-nav>
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
-                <router-outlet></router-outlet>
-            </div>
-            <!-- /.container-fluid -->
+      <app-nav></app-nav>
+
+      <div class="container-fluid flex-grow-1">
+          <router-outlet></router-outlet>
       </div>
       <!-- End of Main Content -->
       <!-- Footer -->

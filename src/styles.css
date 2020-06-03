@@ -593,7 +593,7 @@
   }
 
   footer.sticky-footer {
-    padding: 2rem 0;
+    padding: 1rem 0;
     flex-shrink: 0;
   }
   
@@ -605,4 +605,6 @@
   body.sidebar-toggled footer.sticky-footer {
     width: 100%;
   }
-  
+  .ql-tooltip {
+    z-index: 10 !important;
+  }
