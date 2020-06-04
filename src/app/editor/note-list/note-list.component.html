@@ -1,3 +1,7 @@
-<li *ngFor="let item of notes" class="sidebar-item">
-    <a [routerLink]="'edit/'+item.id">{{item.title}}</a>
+<div class="note-list-wrap">
+  <ol>
+    <li *ngFor="let item of notes" class="sidebar-item">
+      <a [routerLink]="'edit/'+item.id">{{item.title | cutString}}</a>
   </li>
+</ol>
+</div>
