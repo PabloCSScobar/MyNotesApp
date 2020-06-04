@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NotesService } from '../notes.service';
 import { Router } from '@angular/router';
+import { faSave } from '@fortawesome/free-solid-svg-icons';
 declare var $: any;
 
 @Component({
@@ -10,6 +11,7 @@ declare var $: any;
   styleUrls: ['./new-note.component.css']
 })
 export class NewNoteComponent implements OnInit {
+  saveIcon = faSave;
   newNoteForm = new FormGroup({
     title: new FormControl('', Validators.required),
     body: new FormControl('', Validators.required)
@@ -28,7 +30,7 @@ export class NewNoteComponent implements OnInit {
   }
   resizeTextarea() {
     $('textarea').on({input() {
-      const totalHeight = $(this).prop('scrollHeight') - parseInt($(this).css('padding-top'), 10) - parseInt($(this).css('padding-bottom'), 10);
+      const totalHeight = $(this).prop('scrollHeight') - parseInt($(this).css('padding-top'), 10) - parseInt($(this).css('padding-bottom'), 10) ;
       $(this).css({height: totalHeight});
   }
   });
