@@ -8,10 +8,18 @@
     width: 100%;
 } 
 
-/* #wrapper #content-wrapper #content {
-    flex: 1 0 auto;
-} */
+
 .editor-container {
     background-color: rgba(241, 220, 167, 0.089);
 
+}
+.sticky-footer {
+    padding: 1rem 0;
+    flex-shrink: 0;
+    width: 100%;
+}
+  
+footer.sticky-footer .copyright {
+    line-height: 1;
+    font-size: 0.8rem;
 }

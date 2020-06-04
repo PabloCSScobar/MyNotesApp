@@ -49,9 +49,12 @@
     width: 10rem;
 }
 .btn-submit:active {
-    background-color: rgb(233, 194, 121) !important;
-    border-color: rgb(212, 168, 84) !important;
-    box-shadow: inset 0 1px 1px rgba(255, 203, 105), 0 0 8px rgb(255, 203, 105) !important;
+    background-color: rgb(121, 125, 98) !important;
+    border-color: rgb(121, 125, 98) !important;
+    box-shadow: inset 0 1px 1px rgb(102, 105, 83), 0 0 8px rgb(102, 105, 83) !important;
+}
+.btn-submit:focus {
+    box-shadow: inset 0 1px 1px rgb(102, 105, 83), 0 0 8px rgb(102, 105, 83) !important;
 }
 
 
