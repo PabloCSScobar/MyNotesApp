@@ -9,6 +9,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NoteListComponent } from './note-list/note-list.component';
 import { EditNoteComponent } from './edit-note/edit-note.component';
 import { QuillModule } from 'ngx-quill';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { QuillModule } from 'ngx-quill';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    EditorRoutingModule
+    EditorRoutingModule,
+    SharedModule
   ]
 })
 export class EditorModule { }
