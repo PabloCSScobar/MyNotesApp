@@ -11,6 +11,9 @@ body{
   .bg-gradient-primary {
     background-color: rgb(153, 123, 102);
     background-size: cover;
+    -webkit-box-shadow: inset -2px 0px 6px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: inset -2px 0px 6px 1px rgba(0,0,0,0.3);
+    box-shadow: inset -2px 0px 6px 1px rgba(0,0,0,0.3);
   }
   .text-gray-100 {
     color: #f8f9fc !important;
@@ -380,24 +383,9 @@ body{
     z-index: 1;
   }
   
-  .sidebar .sidebar-brand .sidebar-brand-icon i {
-    font-size: 2rem;
-  }
+
   
-  .sidebar .sidebar-brand .sidebar-brand-text {
-    display: none;
-  }
-  
-  .sidebar hr.sidebar-divider {
-    margin: 0 1rem 1rem;
-  }
-  
-  .sidebar .sidebar-item {
-    text-align: center;
-    padding: 0 1rem;
-    font-weight: 500;
-    font-size: .85rem;
-  }
+
 
   @media (min-width: 768px) {
     .sidebar {
@@ -617,7 +605,4 @@ body{
   
   body.sidebar-toggled footer.sticky-footer {
     width: 100%;
-  }
-  .ql-tooltip {
-    z-index: 10 !important;
   }

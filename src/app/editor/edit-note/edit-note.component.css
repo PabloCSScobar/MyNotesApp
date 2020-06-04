@@ -6,21 +6,7 @@
     max-height: 60vh;
     max-width: 80vw;
 }
-@media (min-width: 576px) {
-    .editor {
-        max-width: 70vw;
-    }
-}
-@media (min-width: 768px) {
-    .editor {
-        max-width: 60vw;
-    }
-}
-@media (min-width: 1200px) {
-    .editor {
-        max-width: 75vw;
-    }
-}
+
 .title {
     border: none;
     font-size: 2rem;
@@ -60,7 +46,24 @@
     background-color: rgb(199, 116, 65);
     border-color: rgb(217, 174, 148);
 }
-@media (max-width: 992px) { 
+@media (min-width: 576px) {
+    .editor {
+        max-width: 70vw;
+    }
+}
+@media (min-width: 768px) {
+    .editor {
+        max-width: 60vw;
+    }
+
+}
+@media (min-width: 1200px) {
+    .editor {
+        max-width: 75vw;
+    }
+}
+@media (max-width: 768px) {
+
     .saveBtnText, .deleteBtnText {
         display: none;
     }

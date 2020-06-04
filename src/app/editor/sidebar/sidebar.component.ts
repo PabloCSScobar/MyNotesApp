@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-
+import { faPlus, faBook } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
+  plusIcon = faPlus;
+  bookIcon = faBook;
   constructor() { }
 
   ngOnInit(): void {

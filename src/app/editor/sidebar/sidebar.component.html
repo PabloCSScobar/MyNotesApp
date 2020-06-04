@@ -1,27 +1,24 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark">
 
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">My Notes</div>
-    </a>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
+
+    <div class="sidebar-logo">My Notes</div>
+
+
     <div class="sidebar-item">
-        <a [routerLink]="'new'">Nowa notatka</a>
+        <button [routerLink]="'new'" class="btn add-note-btn">
+            <fa-icon [icon]="plusIcon"></fa-icon>
+            <span class="new-note-button-text">Nowa notatka</span>
+        </button>
     </div>
-    
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Wszystkie notatki</span></a>
-    </li>
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    <hr class="sidebar-divider mt-2">
 
-    <app-note-list></app-note-list>
+    <li class="sidebar-item ml-1">
+        <span class="all-notes-label"><fa-icon class="mr-1" [icon]="bookIcon"></fa-icon>Wszystkie notatki</span>
+        <div class="ml-3">
+            <app-note-list></app-note-list>
+        </div>
+    </li>
+
     </ul>
