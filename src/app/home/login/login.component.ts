@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   login() {
-    if(this.loginForm.status === "VALID") {
-    this.authService.login(this.loginForm.value).subscribe( user => console.log(user), err => console.log(err));
+    if (this.loginForm.status === 'VALID') {
+      this.authService.login(this.loginForm.value).subscribe(user => console.log(user), err => console.log(err));
     }
   }
 
