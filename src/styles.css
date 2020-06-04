@@ -1,4 +1,13 @@
-
+html, body{
+  padding: 0;
+  margin: 0;
+}
+html{
+  height: 100%;
+}
+body{
+  min-height: 100%;
+}
   .bg-gradient-primary {
     background-color: rgb(153, 123, 102);
     background-size: cover;
@@ -112,7 +121,7 @@
   }
   
   .topbar .navbar-search {
-    width: 25rem;
+    width: 20rem;
   }
   
   .topbar .navbar-search input {
@@ -235,7 +244,7 @@
   }
   
   .sidebar {
-    width: 6.5rem;
+    min-width: 6.5rem;
     min-height: 100vh;
   }
   
@@ -389,10 +398,10 @@
     font-weight: 500;
     font-size: .85rem;
   }
-  
+
   @media (min-width: 768px) {
     .sidebar {
-      width: 14rem !important;
+      width: 16rem !important;
     }
     .sidebar .nav-item .collapse {
       position: relative;
@@ -507,7 +516,11 @@
       text-align: center;
     }
   }
-  
+  @media (min-width: 1200px) {
+    .sidebar {
+      width: 25rem !important;
+    }
+  }
   .sidebar-light .sidebar-brand {
     color: #6e707e;
   }
