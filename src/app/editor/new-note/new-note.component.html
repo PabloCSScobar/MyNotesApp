@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container bkg">
     <form [formGroup]="newNoteForm" (ngSubmit)="addNote()" class="d-flex flex-column justify-content-between">
       
       <div class="d-flex flex-grow-1 flex-column ">
@@ -6,8 +6,9 @@
             <quill-editor class="mb-2 d-flex flex-column editor" [styles]="{height: '100%', border: 'none'}" theme="bubble" formControlName="body"></quill-editor>
       </div>
       <div class="d-flex justify-content-end">
-        <button class="btn btn-submit" type="submit">
+        <button class="btn btn-submit mb-1" type="submit">
           <fa-icon [icon]="saveIcon"></fa-icon>
+          <span class="saveBtnText"> Save </span>
         </button>
       </div>
     </form>
