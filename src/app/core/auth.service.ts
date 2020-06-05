@@ -19,8 +19,8 @@ export class AuthService {
   setToken(token) {
     this.cookieService.set('Token', token);
   }
-  getToken(token) {
-    this.cookieService.get('Token');
+  getToken() {
+    return this.cookieService.get('Token');
   }
   login(loginData) {
     return this.http.post<any>(`${environment.apiUrl}/auth/`, loginData).pipe(
