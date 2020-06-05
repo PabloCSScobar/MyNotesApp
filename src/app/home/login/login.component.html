@@ -1,5 +1,17 @@
 <fieldset>
     <h3 class="login-heading mb-4">Welcome back!</h3>
+
+    <div class="errorMessage" *ngIf="errorMessage">
+      <div *ngIf="errorMessage.status == 400">
+        The username or password you entered is incorrect.
+      </div>
+      <div *ngIf="errorMessage.status == 0">
+        Unable to connect to the server.
+      </div>
+      <div *ngIf="errorMessage.status != 400 && errorMessage.status != 0">
+        Unknown error. Please contact the server administrator.
+      </div>
+    </div>
     <form [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="form-group">
           <app-error-message [control]="loginForm.controls['username']"></app-error-message>

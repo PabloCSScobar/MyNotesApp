@@ -22,3 +22,6 @@
 a {
     color:  rgb(151, 67, 11);
 }
+.errorMessage {
+    color: rgb(150, 3, 3);
+}
