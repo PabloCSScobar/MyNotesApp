@@ -9,6 +9,8 @@ import { SharedModule } from './shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CoreModule } from './core/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CookieLawModule } from 'angular2-cookie-law';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SharedModule,
     HttpClientModule,
     BrowserModule,
+    BrowserAnimationsModule,
+    CookieLawModule,
     AppRoutingModule,
     FontAwesomeModule,
     NgbModule
