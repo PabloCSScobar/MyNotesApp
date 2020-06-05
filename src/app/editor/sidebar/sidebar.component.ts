@@ -17,7 +17,6 @@ export class SidebarComponent implements OnInit {
   }
   toggleSidebar() {
     $(".sidebar-wrap").toggleClass("d-flex");
-    $(".sidebar-wrap").toggleClass("position-fixed");
     // $(".sidebar").toggleClass("position-relative");
     $("#sidebarToggleTop").toggleClass("d-none");
   }

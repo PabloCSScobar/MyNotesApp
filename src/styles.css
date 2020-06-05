@@ -12,3 +12,11 @@ body{
   .toggled {
     display: flex;
   }
+  .fixed {
+    position: fixed;
+  }
+@media (min-width: 768px) {
+    .fixed {
+      position: static;
+    }
+}

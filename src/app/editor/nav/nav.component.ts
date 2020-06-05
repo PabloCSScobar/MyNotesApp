@@ -31,7 +31,6 @@ export class NavComponent implements OnInit {
   }
   toggleSidebar() {
     $(".sidebar-wrap").toggleClass("d-flex");
-    $(".sidebar-wrap").toggleClass("position-fixed");
     $("#sidebarToggleTop").toggleClass("d-none");
   }
 
