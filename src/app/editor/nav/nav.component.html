@@ -1,11 +1,16 @@
 <nav class="navbar navbar-expand navbar-light topbar mb-4 shadow">
 
     <ul class="navbar-nav ml-auto">
-        <div class="topbar-divider d-none d-sm-block"></div>
         <li class="nav-item">
             <a class="nav-link" href="javascript:void(0)">
-                <span class="mr-2 d-none d-lg-inline small">USERNAME</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <span class="username mr-2 d-inline small">{{username | async| uppercase }}</span>
+                <img class="img-profile rounded-circle" src="https://eu.ui-avatars.com/api/?name={{username | async}}&background=a5a58d&color=fff&length=1">
+            </a>
+        </li>
+        <div class="topbar-divider d--block"></div>
+        <li class="nav-item">
+            <a (click) = "logout()" class="nav-link" href="javascript:void(0)">
+                <fa-icon class="ml-1" [icon]="signOutIcon"></fa-icon>
             </a>
         </li>
 
