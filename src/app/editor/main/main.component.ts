@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  sideButton = true;
 
+  toggle() {
+    this.sideButton = !this.sideButton;
+  }
   constructor() { }
 
   ngOnInit(): void {

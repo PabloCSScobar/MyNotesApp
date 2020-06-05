@@ -1,13 +1,20 @@
 .sidebar {
     min-width: 6.5rem;
     min-height: 100vh;
+    position: relative;
+    z-index: 100;
 }
 @media (min-width: 768px) {
     .sidebar {
       width: 20rem !important;
     }
 }
-
+.close-sidebar-btn {
+    height: 2rem;
+    width: 2rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
 .bg-gradient-primary {
     background-color: rgb(153, 123, 102);
     background-size: cover;

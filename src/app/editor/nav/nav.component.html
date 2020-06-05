@@ -1,9 +1,11 @@
-<nav class="navbar navbar-expand navbar-light topbar mb-4 shadow">
-
+<nav class="navbar navbar-expand navbar-light topbar mb-4 shadow ml-0 pl-0">
+    <button  (click)="toggleSidebar()" id="sidebarToggleTop" class="btn btn-link d-md-none btn-burger mr-3 ml-0">
+        <fa-icon class="ml-1" [icon]="barsIcon"></fa-icon>
+    </button>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
             <a class="nav-link" href="javascript:void(0)">
-                <span class="username mr-2 d-inline small">{{username | async| uppercase }}</span>
+                <span class="username mr-2 d-none d-md-inline small">{{username | async| uppercase }}</span>
                 <img class="img-profile rounded-circle" src="https://eu.ui-avatars.com/api/?name={{username | async}}&background=a5a58d&color=fff&length=1">
             </a>
         </li>

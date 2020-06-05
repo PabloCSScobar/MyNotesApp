@@ -1,6 +1,9 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark">
-    <li class="sidebar-logo">My Notes</li>
-
+<ul id="sidebar" class="navbar-nav bg-gradient-primary sidebar sidebar-dark">
+    <div class="d-flex">
+        <li class="sidebar-logo">My Notes</li>
+        <button (click)="toggleSidebar()" class="btn close-sidebar-btn d-md-none"><fa-icon [icon]="arrowIcon"></fa-icon></button>
+    </div>
+    
     <li class="sidebar-item mb-3">
         <button [routerLink]="'new'" class="btn add-note-btn">
             <fa-icon [icon]="plusIcon"></fa-icon>

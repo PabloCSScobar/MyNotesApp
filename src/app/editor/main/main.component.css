@@ -23,3 +23,18 @@ footer.sticky-footer .copyright {
     line-height: 1;
     font-size: 0.8rem;
 }
+.toggleButton {
+    height: 2rem;
+    width: 5rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: -5rem;
+}
+.sidebar-wrap {
+    z-index: 1;
+}
+@media (min-width: 768px) {
+    .sidebar {
+        position: static !important;
+    }
+}

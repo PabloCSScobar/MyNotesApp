@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/auth.service';
 import { tap, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt, faBars } from '@fortawesome/free-solid-svg-icons';
+declare var $: any;
+
 
 @Component({
   selector: 'app-nav',
@@ -10,6 +12,7 @@ import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+  barsIcon = faBars;
   signOutIcon = faSignOutAlt;
   username: Observable<any> = null;
   constructor(private auth: AuthService) { }
@@ -25,6 +28,11 @@ export class NavComponent implements OnInit {
   logout() {
     this.auth.logout();
     console.log('logout');
+  }
+  toggleSidebar() {
+    $(".sidebar-wrap").toggleClass("d-flex");
+    $(".sidebar-wrap").toggleClass("position-fixed");
+    $("#sidebarToggleTop").toggleClass("d-none");
   }
 
 }
