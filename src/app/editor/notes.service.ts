@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { environment} from '../../environments/environment'
+import { environment} from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
+import { BehaviorSubject, of } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
 import { AuthService } from '../core/auth.service';
 
@@ -28,12 +29,12 @@ export class NotesService {
     return this.http.post<any>(`${environment.apiUrl}/api/notes/`, note).pipe(
       map(res => res.result),
       tap( res => this.notesSubject.next([...this.notesSubject.getValue(), res]))
-    )
+    );
   }
   deleteNote(id) {
     return this.http.delete(`${environment.apiUrl}/api/notes/${id}/`).pipe(
       tap(
-        () => this.notesSubject.next(this.notesSubject.getValue().filter( x => x.id != id))
+        () => this.notesSubject.next(this.notesSubject.getValue().filter( x => x.id !== id))
     )
     );
   }
@@ -42,11 +43,12 @@ export class NotesService {
     this.http.put(`${environment.apiUrl}/api/notes/${id}/`, note).subscribe( response => {
       console.log(response);
       this.notesSubject.next( this.notesSubject.getValue().map(
-        x=> {
-          if ( x.id == id) {
+        x => {
+          if ( x.id === id) {
             return response;
+          } else {
+            return x;
           }
-          else return x;
         }
       ));
     });
