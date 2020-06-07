@@ -14,16 +14,18 @@ export class NewNoteComponent implements OnInit {
   saveIcon = faSave;
   newNoteForm = new FormGroup({
     title: new FormControl('', Validators.required),
-    body: new FormControl('', Validators.required)
+    body: new FormControl('')
   });
   constructor(private notesService: NotesService, private router: Router) { }
 
 
 
   addNote() {
-    this.notesService.addNote(this.newNoteForm.value).subscribe( note =>
-      this.router.navigate([`notes/edit/${note.id}`])
-    );
+    if ( this.newNoteForm.status === 'VALID') {
+      this.notesService.addNote(this.newNoteForm.value).subscribe( note =>
+        this.router.navigate([`notes/edit/${note.id}`])
+      );
+    }
   }
   ngOnInit(): void {
     this.resizeTextarea();

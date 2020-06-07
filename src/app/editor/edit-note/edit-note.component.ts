@@ -31,7 +31,9 @@ export class EditNoteComponent implements OnInit {
     this.resizeTextarea();
   }
   editNote() {
-    this.notesService.updateNote(this.note.id, this.editNoteForm.value);
+    if ( this.editNoteForm.status === 'VALID') {
+      this.notesService.updateNote(this.note.id, this.editNoteForm.value);
+    }
   }
   getNote(id) {
     this.note = this.notesService.notesSubject.getValue().filter( x => x.id === id)[0];
