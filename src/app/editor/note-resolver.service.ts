@@ -11,10 +11,6 @@ export class NotesResolver implements Resolve<any> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any>|Promise<any>|any {
-    if (this.notesService.notesSubject.getValue()) {
-        return of(true);
-    } else {
-        return this.notesService.getNotes();
-    }
+    return this.notesService.getNotes();
   }
 }
