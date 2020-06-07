@@ -33,10 +33,11 @@ export class AuthService {
   }
   logout() {
     this.cookieService.delete('Token');
-    console.log(this.cookieService.get('Token'));
     this.router.navigate(['auth/login']);
   }
   register(registerData) {
-    this.http.post(`${environment.apiUrl}/api/users/`, registerData).subscribe(res=>console.log(res), err =>console.log(err));
+    return this.http.post(`${environment.apiUrl}/api/users/`, registerData).pipe(
+      tap( () => this.router.navigate(['auth/login'], {queryParams: { registered: 'true' } }))
+    );
   }
 }

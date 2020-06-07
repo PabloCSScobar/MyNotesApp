@@ -1,6 +1,6 @@
 <fieldset>
-    <h3 class="login-heading mb-4">Welcome back!</h3>
-
+    <h3 class="login-heading mb-4" *ngIf="!registerMessage">Welcome back!</h3>
+    <h2 class="login-heading mb-4" *ngIf="registerMessage">Registration Successful! Please Login!</h2>
     <div class="errorMessage" *ngIf="errorMessage">
       <div *ngIf="errorMessage.status == 400">
         The username or password you entered is incorrect.
