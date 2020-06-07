@@ -18,7 +18,7 @@ export class NotesService {
     private http: HttpClient,
     private auth: AuthService
     ) { }
-  
+
   getNotes() {
     return this.http.get(`${environment.apiUrl}/api/notes/`).pipe(
       tap( notes => this.notesSubject.next(notes))

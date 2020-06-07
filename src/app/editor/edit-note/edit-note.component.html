@@ -3,7 +3,7 @@
     <app-error-message [control]="editNoteForm.controls['title']"></app-error-message>
     <div class="d-flex flex-grow-1 flex-column ">
           <textarea type="text" class="form-control title" [placeholder]="'Title'" formControlName="title" rows="1"></textarea>
-          <quill-editor class="mb-2 d-flex flex-column editor" [styles]="{height: '100%', border: 'none'}" theme="bubble" formControlName="body"></quill-editor>
+          <quill-editor class="mb-2 d-flex flex-column editor" placeholder="Type your note here" [styles]="{height: '100%', border: 'none'}" theme="bubble" formControlName="body"></quill-editor>
     </div>
     <div class="d-flex flex-column  align-items-end">
       <button class="btn btn-delete mb-1" (click)="deleteNote()" type="button">
