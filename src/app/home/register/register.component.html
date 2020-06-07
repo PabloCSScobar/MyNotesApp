@@ -1,6 +1,17 @@
 
 
 <div class="wrapper fadeInDown">
+  <div class="errorMessage" *ngIf="errorMessage">
+      <div *ngIf="errorMessage.status == 400">
+        Please enter correct data.
+      </div>
+      <div *ngIf="errorMessage.status == 0">
+        Unable to connect to the server.
+      </div>
+      <div *ngIf="errorMessage.status != 400 && errorMessage.status != 0">
+        Unknown error. Please contact the server administrator.
+      </div>
+    </div>
   <div id="formContent">
       <form [formGroup]="registerForm" (ngSubmit)="register()">
           <app-error-message [control]="registerForm.controls['first_name']"></app-error-message>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/auth.service';
 import { CustomValidators } from 'src/app/shared/custom-validators';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -9,6 +10,7 @@ import { CustomValidators } from 'src/app/shared/custom-validators';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  errorMessage = null;
   registerForm = new FormGroup({
     first_name: new FormControl(''),
     last_name: new FormControl(''),
@@ -32,9 +34,12 @@ export class RegisterComponent implements OnInit {
 
 
   register() {
-    console.log(this.registerForm);
     if (this.registerForm.status === 'VALID') {
-      this.authService.register(this.registerForm.value);
+      this.authService.register(this.registerForm.value).subscribe(() => {}, err => {
+        if ( err instanceof HttpErrorResponse) {
+          this.errorMessage = err;
+        }
+      });
     }
   }
   ngOnInit(): void {
